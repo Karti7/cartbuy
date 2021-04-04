@@ -1,8 +1,16 @@
+import React from 'react';
+import './default.scss';
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to Cartbuy</h1>
+    <div className="App">
+      <Header />
+      <div className="main">
+        <HomePage />
+      </div>
     </div>
   );
 }
