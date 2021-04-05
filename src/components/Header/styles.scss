@@ -7,15 +7,39 @@
 .wrap{
     max-width: auto;
     height: 100%;
-    margin: 10px auto;
+    margin: 0px auto;
     position: relative;
 
     .logo{
         position: absolute;
-        top: 60%; left: 20px;
+        top: 60%; left: 220px;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
     }
+}
+.callToAction{
+    position: absolute;
+    right: 10px;
+    top: 3%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        ui, li {
+            margin: 0;
+            padding: 0;
+
+        }
+        li{
+            list-style: none;
+        }
+        a {
+            font-size: 18px;
+            line-height: 1;
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 }
 }
