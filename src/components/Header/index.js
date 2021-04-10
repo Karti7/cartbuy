@@ -1,35 +1,54 @@
 import React from 'react';
 import './styles.scss';
 import logo from './../../assets/logo.jpg';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {auth} from './../../firebase/utils';
+const Header = props =>{
+    const {currentUser} = props;
 
-const Header = props => {
     return (
         <div className="header">
             <div className="wrap">
                 <div className="logo">
                     <Link to="/">
-                        <img style={{ height: "50px", width: "50px" }} src={logo} alt="logo"></img>
+                        <img style={{width:"50px",height:"50px"}}src={logo} alt="logo"></img>
                     </Link>
                 </div>
             </div>
             <div className="callToAction">
-                <ul>
-                    <li>
+                {!currentUser &&(
+                    <ul>
+                        <li>
                         <Link to="/registration">
                             Register
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/about">
-                            About
-                        </Link>
-                    </li>
-                </ul>
+                        </li>
+                        <li>
+                            <Link to="/login">
+                                Login
+                            </Link>
+                        </li>
+                    </ul>
+                )}
 
+                {currentUser &&(
+                    <ul>
+                        <li>
+                            <span onClick={()=>auth.signOut()}>
+                                Logout
+                            </span>
+                        </li>
+                    </ul>
+                )}
+                
+                
             </div>
         </div>
     )
+}
+
+Header.defaultProps = {
+    currentUser:null
 }
 
 export default Header;

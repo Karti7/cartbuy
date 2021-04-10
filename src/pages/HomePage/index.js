@@ -5,7 +5,7 @@ import './styles.scss';
 const HomePage = props => {
     return(
         <section className="homepage">
-        <ProductCategory />
+            <ProductCategory />
         </section>
     )
 }

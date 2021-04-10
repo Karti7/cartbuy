@@ -1,14 +1,14 @@
 import React from 'react'
 import './styles.scss';
 
-const Footer = props => {
-    return (
+const Footer = props=>{
+    return(
         <div className="footer">
             <div className="wrap">
-            © reserved 2021 by felight IO
+                <p>© by felight io, 2021</p>
             </div>
         </div>
     )
 }
 
-export default Footer;
+export default Footer
